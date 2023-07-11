@@ -28,6 +28,7 @@ export default async function LugaresFiltrados({ params }) {
           {lugaresFiltrados.map(
             ({ titulo, direccion, descripcion, descuento, horarios }) => (
               <InfoCard
+                key={titulo}
                 titulo={titulo}
                 direccion={direccion}
                 descripcion={descripcion}
