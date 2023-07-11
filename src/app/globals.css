@@ -1,27 +1,88 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+  --tawny: #cc5803ff;
+  --cocoa-brown: #e2711dff;
+  --princeton-orange: #ff9505ff;
+  --selective-yellow: #ffb627ff;
+  --xanthous: #ffc971ff;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --gradient-top: linear-gradient(
+    0deg,
+    #cc5803ff,
+    #e2711dff,
+    #ff9505ff,
+    #ffb627ff,
+    #ffc971ff,
+    transparent
+  );
+  --gradient-right: linear-gradient(
+    90deg,
+    #cc5803ff,
+    #e2711dff,
+    #ff9505ff,
+    #ffb627ff,
+    #ffc971ff
+  );
+  --gradient-bottom: linear-gradient(
+    180deg,
+    #cc5803ff,
+    #e2711dff,
+    #ff9505ff,
+    #ffb627ff,
+    #ffc971ff
+  );
+  --gradient-left: linear-gradient(
+    270deg,
+    #cc5803ff,
+    #e2711dff,
+    #ff9505ff,
+    #ffb627ff,
+    #ffc971ff
+  );
+  --gradient-top-right: linear-gradient(
+    45deg,
+    #cc5803ff,
+    #e2711dff,
+    #ff9505ff,
+    #ffb627ff,
+    #ffc971ff
+  );
+  --gradient-bottom-right: linear-gradient(
+    135deg,
+    #cc5803ff,
+    #e2711dff,
+    #ff9505ff,
+    #ffb627ff,
+    #ffc971ff
+  );
+  --gradient-top-left: linear-gradient(
+    225deg,
+    #cc5803ff,
+    #e2711dff,
+    #ff9505ff,
+    #ffb627ff,
+    #ffc971ff
+  );
+  --gradient-bottom-left: linear-gradient(
+    315deg,
+    #cc5803ff,
+    #e2711dff,
+    #ff9505ff,
+    #ffb627ff,
+    #ffc971ff
+  );
+  --gradient-radial: radial-gradient(
+    #cc5803ff,
+    #e2711dff,
+    #ff9505ff,
+    #ffb627ff,
+    #ffc971ff
+  );
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
