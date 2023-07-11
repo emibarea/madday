@@ -1,41 +1,41 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 
 const Carrusel = () => {
   const slides = [
-    // {
-    //   title: "Servidor 1",
-    //   videoUrl:
-    //     "https://player.vimeo.com/external/288299338.sd.mp4?s=ce4e1834ba4818528be42b6271d21e0c64376de8&profile_id=164&oauth2_token_id=57447761",
-    // },
-    // {
-    //   title: "Servidor 2",
-    //   url: "https://images.pexels.com/photos/1753689/pexels-photo-1753689.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    // },
-    // {
-    //   title: "Servidor 3",
-    //   url: "https://images.pexels.com/photos/14772276/pexels-photo-14772276.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    // },
-    // {
-    //   title: "Servidor 4",
-    //   videoUrl:
-    //     "https://player.vimeo.com/external/434851977.sd.mp4?s=0d286dc73dfdceb2458dda6576db83f2d00b11db&profile_id=164&oauth2_token_id=57447761",
-    // },
-    // {
-    //   title: "Servidor 5",
-    //   url: "https://images.pexels.com/photos/390051/surfer-wave-sunset-the-indian-ocean-390051.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    // },
+    {
+      title: "Servidor 1",
+      videoUrl:
+        "https://player.vimeo.com/external/288299338.sd.mp4?s=ce4e1834ba4818528be42b6271d21e0c64376de8&profile_id=164&oauth2_token_id=57447761",
+    },
+    {
+      title: "Servidor 2",
+      url: "https://images.pexels.com/photos/1753689/pexels-photo-1753689.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    },
+    {
+      title: "Servidor 3",
+      url: "https://images.pexels.com/photos/14772276/pexels-photo-14772276.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    },
+    {
+      title: "Servidor 4",
+      videoUrl:
+        "https://player.vimeo.com/external/434851977.sd.mp4?s=0d286dc73dfdceb2458dda6576db83f2d00b11db&profile_id=164&oauth2_token_id=57447761",
+    },
+    {
+      title: "Servidor 5",
+      url: "https://images.pexels.com/photos/390051/surfer-wave-sunset-the-indian-ocean-390051.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    },
     {
       title: "Servidor 6",
       url: "https://images.pexels.com/photos/414247/pexels-photo-414247.jpeg?auto=compress&cs=tinysrgb&w=1600",
     },
-    // {
-    //   title: "Servidor 7",
-    //   videoUrl:
-    //     "https://player.vimeo.com/external/434854822.sd.mp4?s=b7fa3a0513f214a8ddccb1b2269a78b6ff8d9edb&profile_id=164&oauth2_token_id=57447761",
-    // },
+    {
+      title: "Servidor 7",
+      videoUrl:
+        "https://player.vimeo.com/external/434854822.sd.mp4?s=b7fa3a0513f214a8ddccb1b2269a78b6ff8d9edb&profile_id=164&oauth2_token_id=57447761",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -46,11 +46,11 @@ const Carrusel = () => {
     setCurrentIndex(newIndex);
   };
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     const isLastSlide = currentIndex === slides.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
-  };
+  }, [currentIndex, slides.length]);
 
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
@@ -63,7 +63,7 @@ const Carrusel = () => {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [currentIndex]);
+  }, [currentIndex, nextSlide]);
   return (
     <div className="z-0 h-[780px] w-full relative group">
       {/* Background */}
