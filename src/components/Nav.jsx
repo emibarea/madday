@@ -1,10 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
-import logo2 from "../assets/logo2.png";
+import logo3 from "../assets/logo3.png";
 import Image from "next/image";
 import { dropdownNavs } from "../assets/data";
 import Link from "next/link";
 import Links from "./Links";
+import { motion } from "framer-motion";
 
 const Nav = () => {
   const [state, setState] = useState(false);
@@ -13,7 +14,6 @@ const Nav = () => {
     idx: null,
   });
 
-  // Replace javascript:void(0) paths with your paths
   const navigation = [
     {
       title: "Nuestros Lugares",
@@ -37,15 +37,15 @@ const Nav = () => {
   return (
     <>
       <nav
-        className={`relative z-20 w-full  md:text-sm md:border-none ${
-          state ? "shadow-lg rounded-b-xl md:shadow-none" : ""
+        className={`w-full z-20 fixed top-0 left-0 right-0 bg-black/50 text-white md:text-sm md:border-none ${
+          state ? "shadow-lg rounded-b-lg md:shadow-none" : ""
         }`}
       >
         <div className="items-center gap-x-14 px-4 max-w-screen-xl mx-auto md:flex md:px-8">
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <Link className="cursor-pointer" href="/">
               <Image
-                src={logo2}
+                src={logo3}
                 width={120}
                 height={50}
                 objectFit="cover"
@@ -137,6 +137,7 @@ const Nav = () => {
                       </button>
                     ) : (
                       <Links
+                        prefetch
                         path={item.path}
                         title={item.title}
                         onClick={() => setDrapdownState(false)}
@@ -145,7 +146,7 @@ const Nav = () => {
                     {item.isDrapdown &&
                     drapdownState.idx == idx &&
                     drapdownState.isActive ? (
-                      <div className="z-20 mt-6 inset-x-0 top-[86px] w-full md:border md:absolute md:shadow-md md:mt-0 md:bg-white">
+                      <div className="z-20 mt-6 inset-x-0 top-[84px] w-full md:absolute md:shadow-md md:mt-0 md:bg-white">
                         <ul className="max-w-screen-xl mx-auto grid items-center gap-6 md:p-8 md:grid-cols-2 lg:grid-cols-3">
                           {item?.navs.map((dropdownItem, idx) => (
                             <li key={idx}>
@@ -156,7 +157,7 @@ const Nav = () => {
                                 {dropdownItem.navs.map((navItem, idx) => (
                                   <li
                                     key={idx}
-                                    className="group p-2 rounded-xl hover:bg-gray-100"
+                                    className="group p-2 rounded-xl hover:bg-gray-200"
                                   >
                                     <Link
                                       href={navItem.path}
@@ -192,20 +193,15 @@ const Nav = () => {
               })}
               <div className="flex-1 items-center justify-end gap-x-6 space-y-3 md:flex md:space-y-0">
                 <li>
-                  <Link
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    whileTap={{ scale: 0.9 }}
                     href="/"
-                    className="block p-3 rounded-full border-1  shadow-md text-center hover:text-[--tawny] hover:shadow-xl active:scale-90 "
+                    className="w-full sm:w-auto py-3 px-4 font-medium text-center text-white bg-[--tawny] hover:bg-[--princeton-orange]  rounded-lg shadow"
                   >
-                    Log in
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/"
-                    className="block py-3 px-4 font-medium text-center text-white bg-[--tawny] hover:bg-[--princeton-orange]  rounded-lg shadow active:scale-90 transition duration-300 ease-out "
-                  >
-                    Sign in
-                  </Link>
+                    Ingresa
+                  </motion.button>
                 </li>
               </div>
             </ul>

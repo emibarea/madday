@@ -1,30 +1,30 @@
-import fetchData from "@/app/data";
 import InfoCard from "@/components/InfoCard";
+import comercios from "@/utilities/Comercio";
 
 export default async function LugaresFiltrados({ params }) {
   const { filtro } = params;
-  const lugares = await fetchData();
   const lugaresFiltrados =
-    filtro === "todos"
-      ? lugares
-      : lugares.filter((lugar) => lugar[filtro] === true);
+    filtro === "Comercios"
+      ? comercios
+      : comercios.filter((lugar) => lugar.filtro[filtro] === true);
   return (
-    <div>
+    <div className="pt-12">
       <main className="flex">
         <section className="flex-grow pt-14 px-6">
-          <p className="text-xs">lorem ipsu lasjabsubuy</p>
+          <p className="text-xs">Conoce nuestra red de comercios!</p>
           <h1 className="text-3xl font-semibold mt-2 mb-6">
-            Filtrar por {filtro}
+            Busqueda por {filtro}.
           </h1>
           {lugaresFiltrados.map(
-            ({ titulo, direccion, descripcion, descuento, horarios }) => (
+            ({ titulo, ubicacion, descripcion, descuento, horarios }) => (
               <InfoCard
                 key={titulo}
                 titulo={titulo}
-                direccion={direccion}
+                ubicacion={ubicacion}
                 descripcion={descripcion}
                 descuento={descuento}
                 horarios={horarios}
+                currentFilter={filtro}
               />
             )
           )}
