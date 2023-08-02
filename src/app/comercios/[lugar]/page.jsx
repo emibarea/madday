@@ -11,19 +11,19 @@ export default async function perfilLugar({ params }) {
       <br />
       {currentLugar.descripcion}
       <br />
-      {currentLugar.deportes.map((deporte) => (
-        <p>{deporte}</p>
+      {currentLugar.deportes.map((deporte, key) => (
+        <p key={key}>{deporte}</p>
       ))}
       <br />
       {currentLugar.ubicacion}
       <br />
-      {currentLugar.servicios.map((servicio) => (
-        <p>{servicio}</p>
+      {currentLugar.servicios.map((servicio, key) => (
+        <p key={key}>{servicio}</p>
       ))}
       <br />
-      {currentLugar?.descuento}%
+      {currentLugar.descuento}%
       <br />
-      {currentLugar?.horarios}
+      {currentLugar.horarios}
       {/* <br />
       {currentLugar.contacto}
       <br />
