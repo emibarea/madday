@@ -6,19 +6,18 @@ export default async function perfilLugar({ params }) {
     (i) => i.titulo === decodeURIComponent(lugar)
   );
   return (
-    <div>
-      <p>{lugar}</p>
-      {currentLugar?.titulo}
+    <div className="pt-24">
+      {currentLugar.titulo}
       <br />
-      {currentLugar?.descripcion}
+      {currentLugar.descripcion}
       <br />
-      {currentLugar?.deportes.map((deporte) => (
+      {currentLugar.deportes.map((deporte) => (
         <p>{deporte}</p>
       ))}
       <br />
-      {currentLugar?.ubicacion}
+      {currentLugar.ubicacion}
       <br />
-      {currentLugar?.servicios.map((servicio) => (
+      {currentLugar.servicios.map((servicio) => (
         <p>{servicio}</p>
       ))}
       <br />

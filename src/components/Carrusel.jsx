@@ -62,7 +62,7 @@ const Carrusel = () => {
         <h1 className="text-4xl font-extrabold underline dark:text-white">
           {comercios[currentIndex].titulo}
         </h1>
-        <p className="my-4 text-sm sm:text-lg overflow-ellipsis overflow-hidden max-h-48">
+        <p className="my-4 text-sm sm:text-lg overflow-ellipsis overflow-hidden max-h-48 bg-black/30 rounded-lg">
           {comercios[currentIndex].descripcion}
         </p>
         <a
