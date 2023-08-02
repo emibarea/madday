@@ -37,7 +37,7 @@ const Nav = () => {
   return (
     <>
       <nav
-        className={`w-full z-20 fixed top-0 left-0 right-0 bg-black/50 text-white md:text-sm md:border-none ${
+        className={`w-full z-20 absolute md:fixed top-0 left-0 right-0 bg-black/50 text-white md:text-sm md:border-none ${
           state ? "shadow-lg rounded-b-lg md:shadow-none" : ""
         }`}
       >
@@ -146,7 +146,7 @@ const Nav = () => {
                     {item.isDrapdown &&
                     drapdownState.idx == idx &&
                     drapdownState.isActive ? (
-                      <div className="z-20 mt-6 inset-x-0 top-[84px] w-full md:absolute md:shadow-md md:mt-0 md:bg-white">
+                      <div className="z-20 mt-6 inset-x-0 top-[84px] w-full rounded-lg p-2 md:absolute md:shadow-md md:mt-0 bg-white">
                         <ul className="max-w-screen-xl mx-auto grid items-center gap-6 md:p-8 md:grid-cols-2 lg:grid-cols-3">
                           {item?.navs.map((dropdownItem, idx) => (
                             <li key={idx}>
@@ -157,7 +157,7 @@ const Nav = () => {
                                 {dropdownItem.navs.map((navItem, idx) => (
                                   <li
                                     key={idx}
-                                    className="group p-2 rounded-xl hover:bg-gray-200"
+                                    className="group p-2 border rounded-xl hover:bg-gray-200"
                                   >
                                     <Link
                                       href={navItem.path}
