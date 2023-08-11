@@ -35,16 +35,12 @@ const pampaCablePark = new Comercio(
   ["Restobar", "Alojamiento", "Clases de WakeBoard"],
   25,
   "Mie a vie 13:00 a 19:00hs.",
-  "insertar contacto",
+  {},
+
   (
     <iframe
+      style={{ width: "100%", height: "500px" }}
       src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13215.629144356275!2d-58.9933999!3d-34.0975155!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb0cb9a0c9c547%3A0x4ebaf011ad68e692!2sPampa%20cablepark!5e0!3m2!1ses!2sar!4v1689043144840!5m2!1ses!2sar"
-      width="600"
-      height="450"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
   ),
   {
@@ -72,15 +68,11 @@ const hudsonWakeBoardComplex = new Comercio(
     url: "http://www.hwclub.com.ar/web/",
     tel: "011 3004-4147",
   },
+
   (
     <iframe
+      style={{ width: "100%", height: "500px" }}
       src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13107.221434912391!2d-58.145729!3d-34.785675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a326553d0b9abb%3A0xbc4e798e5aafab3d!2sHWC%20Hudson%20Wakeboard%20Club!5e0!3m2!1ses-419!2sar!4v1689043669590!5m2!1ses-419!2sar"
-      width="600"
-      height="450"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
   ),
   {
@@ -109,13 +101,8 @@ const shareWoodPilar = new Comercio(
   },
   (
     <iframe
+      style={{ width: "100%", height: "500px" }}
       src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13163.502836551083!2d-58.8673922!3d-34.4299121!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc9dae96b19089%3A0xabf3edb8e604d4f9!2sSharewood%20Pilar!5e0!3m2!1ses!2sar!4v1689043935176!5m2!1ses!2sar"
-      width="600"
-      height="450"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
   ),
   {
@@ -143,13 +130,8 @@ const peruBeach = new Comercio(
   },
   (
     <iframe
+      style={{ width: "100%", height: "500px" }}
       src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13163.502836551083!2d-58.8673922!3d-34.4299121!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc9dae96b19089%3A0xabf3edb8e604d4f9!2sSharewood%20Pilar!5e0!3m2!1ses!2sar!4v1689044180928!5m2!1ses!2sar"
-      width="600"
-      height="450"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
   ),
   {

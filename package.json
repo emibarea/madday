@@ -16,6 +16,7 @@
     "flowbite-react": "^0.4.11",
     "framer-motion": "^10.15.0",
     "next": "13.4.9",
+    "pattern.css": "^1.0.0",
     "postcss": "^8.4.25",
     "react": "18.2.0",
     "react-dom": "18.2.0",

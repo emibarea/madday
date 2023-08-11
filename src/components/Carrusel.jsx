@@ -3,6 +3,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 import comercios from "@/utilities/Comercio";
+import Link from "next/link";
 const Carrusel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -65,8 +66,8 @@ const Carrusel = () => {
         <p className="my-4 text-sm sm:text-lg overflow-ellipsis overflow-hidden max-h-48 bg-black/30 rounded-lg">
           {comercios[currentIndex].descripcion}
         </p>
-        <a
-          href="#"
+        <Link
+          href={`comercios/${comercios[currentIndex].titulo}`}
           class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-black/50 rounded-lg hover:bg-white/60 hover:text-black hover:ring-2 hover:ring-black/30 focus:ring-black"
         >
           Ver Mas
@@ -82,7 +83,7 @@ const Carrusel = () => {
               clip-rule="evenodd"
             ></path>
           </svg>
-        </a>
+        </Link>
       </div>
       {/* Left Arrow */}
       <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
