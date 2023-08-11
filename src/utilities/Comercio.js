@@ -1,4 +1,3 @@
-import hudson from "@/assets/comercios/hudson.jpeg";
 class Comercio {
   constructor(
     titulo,
@@ -256,3 +255,21 @@ comercios.push(
   malloys
 );
 export default comercios;
+
+const BuenosAires = "BuenosAires";
+const Mendoza = "Mendoza";
+const SantaFe = "SantaFe";
+
+const Tiendas = "Tiendas";
+const Escuelas = "Escuelas";
+const Restobares = "Restobares";
+const Alojamientos = "Alojamientos";
+const WakeBoard = "WakeBoard";
+const KiteSurf = "KiteSurf";
+const Sup = "Sup";
+const SkateBoard = "SkateBoard";
+export const filtros = {
+  ubicacion: [BuenosAires, Mendoza, SantaFe],
+  comercios: [Tiendas, Escuelas, Restobares, Alojamientos],
+  actividades: [WakeBoard, KiteSurf, Sup, SkateBoard],
+};
