@@ -16,13 +16,13 @@ const Nav = () => {
 
   const navigation = [
     {
-      title: "Nuestros Lugares",
+      title: "Filtros especificos",
       path: "/",
       isDrapdown: true,
       navs: dropdownNavs,
     },
+    { title: "Filtros Anidados", path: "/lugares", isDrapdown: false },
     { title: "Sobre Nosotros", path: "/sobre-nosotros", isDrapdown: false },
-    { title: "Sponsors", path: "/sponsors", isDrapdown: false },
     { title: "Contacto", path: "/contacto", isDrapdown: false },
   ];
 

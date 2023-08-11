@@ -269,7 +269,7 @@ const KiteSurf = "KiteSurf";
 const Sup = "Sup";
 const SkateBoard = "SkateBoard";
 export const filtros = {
-  ubicacion: [BuenosAires, Mendoza, SantaFe],
-  comercios: [Tiendas, Escuelas, Restobares, Alojamientos],
-  actividades: [WakeBoard, KiteSurf, Sup, SkateBoard],
+  Ubicacion: [BuenosAires, Mendoza, SantaFe],
+  Comercios: [Tiendas, Escuelas, Restobares, Alojamientos],
+  Actividades: [WakeBoard, KiteSurf, Sup, SkateBoard],
 };

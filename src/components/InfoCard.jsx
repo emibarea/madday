@@ -2,14 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const InfoCard = ({
-  titulo,
-  ubicacion,
-  descripcion,
-  descuento,
-  horarios,
-  currentFilter,
-}) => {
+const InfoCard = ({ titulo, ubicacion, descripcion, descuento }) => {
   return (
     <Link
       href={`/comercios/${titulo}`}
