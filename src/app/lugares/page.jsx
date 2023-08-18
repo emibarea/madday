@@ -4,6 +4,13 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import InfoCard from "@/components/InfoCard";
 import comercios from "@/utilities/Comercio";
 import { filtros } from "@/utilities/Comercio";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 export default function LugaresFiltrados() {
   const [activeFilters, setActiveFilters] = useState({});
@@ -41,84 +48,108 @@ export default function LugaresFiltrados() {
 
   return (
     <div className="pt-12">
-      <main className="flex">
-        <section className="flex-grow pt-14 px-6">
-          <p className="text-xs">Conoce nuestros puntos de beneficio!</p>
-          <h1 className="text-3xl font-semibold mt-2 mb-6">
-            Nuestra Cadena de Comercios.
-          </h1>
-          <div className="mt-2 mb-5">
-            {Object.keys(filtros).map((categoria) => (
-              <div key={categoria} className="mb-4">
-                <div
-                  className={`flex items-center cursor-pointer text-gray-600 hover:text-gray-800 ${
-                    openDropdowns[categoria] ? "underline" : ""
-                  }`}
-                  onClick={() => toggleDropdown(categoria)}
-                >
-                  <p
-                    className={`font-semibold ${
-                      openDropdowns[categoria] ? "ml-1" : "ml-0"
-                    }`}
-                  >
-                    {categoria}:
-                  </p>
-                  {openDropdowns[categoria] ? (
-                    <FiChevronUp />
-                  ) : (
-                    <FiChevronDown />
-                  )}
-                </div>
-                {openDropdowns[categoria] && (
-                  <div className="space-y-3 space-x-0 sm:space-y-0 sm:space-x-3 sm:inline-flex  mt-2 whitespace-nowrap ">
-                    {filtros[categoria].map((fil) => (
-                      <p
-                        key={fil}
-                        className={`${
-                          activeFilters[fil]
-                            ? "bg-[--tawny] text-white"
-                            : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-                        } p-5 rounded-full text-sm font-semibold cursor-pointer`}
-                        onClick={() => toggleFilter(fil)}
-                      >
-                        {fil}
-                      </p>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-          <br />
-          <span className="mb-2">
-            Filtros de busqueda:{" "}
-            {Object.keys(activeFilters).map((filtroKey) => (
-              <button
-                key={filtroKey}
-                className=" bg-gray-200 hover:bg-gray-300 text-gray-700 px-2 py-1 rounded-full text-sm font-semibold ml-2"
-                onClick={() => toggleFilter(filtroKey)}
+      <section className="flex-grow pt-14 px-6">
+        <p className="text-xs">Conoce nuestros puntos de beneficio!</p>
+        <h1 className="text-3xl font-semibold mt-2 mb-6">
+          Nuestra Cadena de Comercios.
+        </h1>
+        <div className="mt-2 mb-5">
+          {Object.keys(filtros).map((categoria) => (
+            <div key={categoria} className="mb-4">
+              <div
+                className={`flex items-center cursor-pointer text-gray-600 hover:text-gray-800 ${
+                  openDropdowns[categoria] ? "underline" : ""
+                }`}
+                onClick={() => toggleDropdown(categoria)}
               >
-                {filtroKey}
-              </button>
-            ))}
-            <p className="mt-2 flex gap-1">
-              <p className="font-bold">{lugaresFiltrados.length}</p> comercios
-              encontrados.
-            </p>
-          </span>
+                <p
+                  className={`font-semibold ${
+                    openDropdowns[categoria] ? "ml-1" : "ml-0"
+                  }`}
+                >
+                  {categoria}:
+                </p>
+                {openDropdowns[categoria] ? <FiChevronUp /> : <FiChevronDown />}
+              </div>
+              {openDropdowns[categoria] && (
+                <div className="space-y-3 space-x-0 sm:space-y-0 sm:space-x-3 sm:inline-flex  mt-2 whitespace-nowrap ">
+                  {filtros[categoria].map((fil) => (
+                    <p
+                      key={fil}
+                      className={`${
+                        activeFilters[fil]
+                          ? "bg-[--tawny] text-white"
+                          : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                      } p-5 rounded-full text-sm font-semibold cursor-pointer`}
+                      onClick={() => toggleFilter(fil)}
+                    >
+                      {fil}
+                    </p>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        <br />
+        <span className="mb-2">
+          Filtros de busqueda:{" "}
+          {Object.keys(activeFilters).map((filtroKey) => (
+            <button
+              key={filtroKey}
+              className=" bg-gray-200 hover:bg-gray-300 text-gray-700 px-2 py-1 rounded-full text-sm font-semibold ml-2"
+              onClick={() => toggleFilter(filtroKey)}
+            >
+              {filtroKey}
+            </button>
+          ))}
+          <p className="mt-2 flex gap-1">
+            <p className="font-bold">{lugaresFiltrados.length}</p> comercios
+            encontrados.
+          </p>
+        </span>
+      </section>
+      <div>
+        <div className="hidden md:block">
           {lugaresFiltrados.map(
             ({ titulo, ubicacion, descripcion, descuento }) => (
-              <InfoCard
-                key={titulo}
-                titulo={titulo}
-                ubicacion={ubicacion}
-                descripcion={descripcion}
-                descuento={descuento}
-              />
+              <>
+                <InfoCard
+                  key={titulo}
+                  titulo={titulo}
+                  ubicacion={ubicacion}
+                  descripcion={descripcion}
+                  descuento={descuento}
+                />
+              </>
             )
           )}
-        </section>
-      </main>
+        </div>
+        <div className="block md:hidden">
+          <Swiper
+            // install Swiper modules
+            spaceBetween={50}
+            slidesPerView={1}
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+          >
+            {lugaresFiltrados.map(
+              ({ titulo, ubicacion, descripcion, descuento }) => (
+                <SwiperSlide>
+                  <InfoCard
+                    key={titulo}
+                    titulo={titulo}
+                    ubicacion={ubicacion}
+                    descripcion={descripcion}
+                    descuento={descuento}
+                  />
+                </SwiperSlide>
+              )
+            )}
+          </Swiper>
+        </div>
+      </div>
     </div>
   );
 }
