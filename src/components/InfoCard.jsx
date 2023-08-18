@@ -3,9 +3,10 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const InfoCard = ({ titulo, ubicacion, descripcion, descuento }) => {
+const InfoCard = ({ titulo, ubicacion, descripcion, descuento, key }) => {
   return (
     <Link
+      key={key}
       href={`/comercios/${titulo}`}
       className="bg-gray-300 mx-2 sm:mx-8 my-6 flex justify-center items-center flex-col sm:flex-row py-7 px-2 pr-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:scale-[1.01] hover:shadow-xl hover:opacity-105 transition duration-200 ease-out first:border-t"
     >
