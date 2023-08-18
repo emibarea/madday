@@ -136,7 +136,7 @@ export default function LugaresFiltrados() {
           >
             {lugaresFiltrados.map(
               ({ titulo, ubicacion, descripcion, descuento }, index) => (
-                <SwiperSlide>
+                <SwiperSlide key={index}>
                   <InfoCard
                     key={index}
                     titulo={titulo}
