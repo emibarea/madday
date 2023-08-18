@@ -135,10 +135,10 @@ export default function LugaresFiltrados() {
             scrollbar={{ draggable: true }}
           >
             {lugaresFiltrados.map(
-              ({ titulo, ubicacion, descripcion, descuento }) => (
+              ({ titulo, ubicacion, descripcion, descuento }, index) => (
                 <SwiperSlide>
                   <InfoCard
-                    key={titulo}
+                    key={index}
                     titulo={titulo}
                     ubicacion={ubicacion}
                     descripcion={descripcion}
