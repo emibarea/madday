@@ -101,6 +101,10 @@ export default function LugaresFiltrados() {
                 {filtroKey}
               </button>
             ))}
+            <p className="mt-2 flex gap-1">
+              <p className="font-bold">{lugaresFiltrados.length}</p> comercios
+              encontrados.
+            </p>
           </span>
           {lugaresFiltrados.map(
             ({ titulo, ubicacion, descripcion, descuento }) => (
