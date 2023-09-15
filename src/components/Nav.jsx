@@ -15,13 +15,8 @@ const Nav = () => {
   });
 
   const navigation = [
-    {
-      title: "Filtros especificos",
-      path: "/",
-      isDrapdown: true,
-      navs: dropdownNavs,
-    },
-    { title: "Filtros Anidados", path: "/lugares", isDrapdown: false },
+    { title: "Comercios", path: "/comercios", isDrapdown: false },
+    { title: "Articulos de Interes", path: "/articulos", isDrapdown: false },
     { title: "Sobre Nosotros", path: "/sobre-nosotros", isDrapdown: false },
     { title: "Contacto", path: "/contacto", isDrapdown: false },
   ];
@@ -60,7 +55,7 @@ const Nav = () => {
                 {state ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
+                    className="h-6 w-6 text-white"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -75,7 +70,7 @@ const Nav = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    className="w-6 h-6"
+                    className="w-6 h-6 text-white"
                   >
                     <path
                       fillRule="evenodd"
@@ -92,10 +87,10 @@ const Nav = () => {
               state ? "block" : "hidden"
             }`}
           >
-            <ul className="items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
+            <ul className=" items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
               {navigation.map((item, idx) => {
                 return (
-                  <li key={idx}>
+                  <li key={idx} className="">
                     {item.isDrapdown ? (
                       <button
                         className="w-full flex items-center justify-between gap-1 hover:text-[--tawny]"

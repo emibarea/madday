@@ -57,18 +57,18 @@ const Carrusel = () => {
         }}
         className="bg-fixed w-full h-full bg-center bg-cover duration-1000"
       ></div>
-
+      <div className="h-full w-full bg-black/30 z-10 absolute top-0"></div>
       {/* DATA */}
-      <div className="absolute top-[40%] left-[10%] max-w-xs font-sans text-white sm:max-w-sm">
+      <div className="absolute top-[40%] left-[10%] z-20 max-w-xs font-sans text-white sm:max-w-sm">
         <h1 className="text-4xl font-extrabold underline dark:text-white">
           {comercios[currentIndex].titulo}
         </h1>
-        <p className="my-4 text-sm sm:text-lg overflow-ellipsis overflow-hidden max-h-48 bg-black/30 rounded-lg">
+        <p className="my-4 text-sm sm:text-lg overflow-ellipsis overflow-hidden max-h-48 rounded-lg">
           {comercios[currentIndex].descripcion}
         </p>
         <Link
           href={`comercios/${comercios[currentIndex].titulo}`}
-          class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-black/50 rounded-lg hover:bg-white/60 hover:text-black hover:ring-2 hover:ring-black/30 focus:ring-black"
+          class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-black/90 rounded-2xl hover:bg-white/60 hover:text-black hover:ring-2 hover:ring-black/30 focus:ring-black"
         >
           Ver Mas
           <svg
@@ -86,11 +86,11 @@ const Carrusel = () => {
         </Link>
       </div>
       {/* Left Arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+      <div className="z-20 hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
         <BsChevronCompactLeft onClick={prevSlide} size={30} />
       </div>
       {/* Right Arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+      <div className="z-20 hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
         <BsChevronCompactRight onClick={nextSlide} size={30} />
       </div>
       <div className="absolute inset-x-0 bottom-0 flex  justify-center py-2">
