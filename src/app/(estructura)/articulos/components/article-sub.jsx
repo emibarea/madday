@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { BiUpArrow, BiDownArrow } from "react-icons/bi";
-const ArticleSub = ({ title, description }) => {
+const ArticleSub = ({ titulo, descripcion }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleDescription = () => {
@@ -20,10 +20,10 @@ const ArticleSub = ({ title, description }) => {
           <BiDownArrow className="text-gray-500 cursor-pointer" />
         )}
         <h2 className="text-xl font-semibold ml-2 group-hover:underline">
-          {title}
+          {titulo}
         </h2>
       </div>
-      {isExpanded && <p className="mt-2">{description}</p>}
+      {isExpanded && <p className="mt-2">{descripcion}</p>}
     </div>
   );
 };

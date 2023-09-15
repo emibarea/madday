@@ -138,51 +138,6 @@ const Nav = () => {
                         onClick={() => setDrapdownState(false)}
                       />
                     )}
-                    {item.isDrapdown &&
-                    drapdownState.idx == idx &&
-                    drapdownState.isActive ? (
-                      <div className="z-20 mt-6 inset-x-0 top-[84px] w-full rounded-lg p-2 md:absolute md:shadow-md md:mt-0 bg-white">
-                        <ul className="max-w-screen-xl mx-auto grid items-center gap-6 md:p-8 md:grid-cols-2 lg:grid-cols-3">
-                          {item?.navs.map((dropdownItem, idx) => (
-                            <li key={idx}>
-                              <p className="text-[--tawny] text-sm">
-                                {dropdownItem.label}
-                              </p>
-                              <ul className="mt-5 space-y-6">
-                                {dropdownItem.navs.map((navItem, idx) => (
-                                  <li
-                                    key={idx}
-                                    className="group p-2 border rounded-xl hover:bg-gray-200"
-                                  >
-                                    <Link
-                                      href={navItem.path}
-                                      onClick={() =>
-                                        setDrapdownState(!drapdownState)
-                                      }
-                                      className="flex cursor-pointer gap-3 items-center"
-                                    >
-                                      <div className="w-12 h-12 rounded-full bg-indigo-50 text-[--tawny] flex items-center justify-center duration-150 group-hover:bg-[--tawny]  group-hover:text-white md:w-14 md:h-14">
-                                        {navItem.icon}
-                                      </div>
-                                      <div>
-                                        <span className="text-gray-800 duration-200 group-hover:text-[--princeton-orange] text-sm font-medium md:text-base">
-                                          {navItem.title}
-                                        </span>
-                                        <p className="text-sm text-gray-600 group-hover:text-gray-800 mt-1">
-                                          {navItem.desc}
-                                        </p>
-                                      </div>
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ) : (
-                      ""
-                    )}
                   </li>
                 );
               })}
@@ -193,7 +148,7 @@ const Nav = () => {
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     whileTap={{ scale: 0.9 }}
                     href="/"
-                    className="w-full sm:w-auto py-3 px-4 font-medium text-center text-white bg-[--tawny] hover:bg-[--princeton-orange]  rounded-lg shadow"
+                    className="w-full sm:w-auto py-3 px-4 font-medium text-center text-white bg-[--tawny] rounded-lg shadow hover:bg-white hover:text-black transition duration-200 ease-out"
                   >
                     Ingresa
                   </motion.button>

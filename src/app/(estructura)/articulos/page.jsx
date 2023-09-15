@@ -16,8 +16,8 @@ const ArticulosPage = () => {
         {articulos.map((articulo, index) => (
           <ArticleCard
             key={index}
-            title={articulo.title}
-            description={articulo.description}
+            titulo={articulo.titulo}
+            descripcion={articulo.descripcion}
             img={articulo.img}
             subtitles={articulo.subtitles}
             conclusion={articulo.conclusion}
