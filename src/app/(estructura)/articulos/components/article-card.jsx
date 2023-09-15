@@ -39,6 +39,7 @@ const ArticleCard = ({
         </div>
         {subtitles?.map((subtitle) => (
           <ArticleSub
+            key={subtitle.title}
             title={subtitle.title}
             description={subtitle.description}
           />
