@@ -15,10 +15,10 @@ const Nav = () => {
   });
 
   const navigation = [
-    { title: "Comercios", path: "/comercios", isDrapdown: false },
-    { title: "Articulos de Interes", path: "/articulos", isDrapdown: false },
+    { title: "Puntos adheridos", path: "/puntos-adheridos", isDrapdown: false },
+    { title: "Notas de Interes", path: "/notas", isDrapdown: false },
+    { title: "Miembros", path: "/miembros", isDrapdown: false },
     { title: "Sobre Nosotros", path: "/sobre-nosotros", isDrapdown: false },
-    { title: "Contacto", path: "/contacto", isDrapdown: false },
   ];
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import InfoCard from "@/components/InfoCard";
 import comercios from "@/utilities/Comercio";
@@ -15,7 +15,15 @@ import "swiper/css/scrollbar";
 export default function LugaresFiltrados() {
   const [activeFilters, setActiveFilters] = useState({});
   const [openDropdowns, setOpenDropdowns] = useState({});
+  const [isMounted, setIsMounted] = useState(false);
 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
   const toggleFilter = (filtroKey) => {
     setActiveFilters((prevFilters) => {
       const updatedFilters = { ...prevFilters };
